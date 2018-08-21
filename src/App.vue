@@ -1,7 +1,7 @@
 <template>
   <div class="app container">
       <AppInput v-model="input" plcHolder="Add task"/>
-      <button @click="addTodo">Prideti</button>
+      <button @click="addTodo">Prideti</button> // tas pats kaip ir v-on:click="addTodo()"
       <ul>
           <li v-for="(task, index) in todo" v-bind:key="index">
               <s v-if="task.done">{{task.value}}</s>
