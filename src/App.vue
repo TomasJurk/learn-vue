@@ -23,6 +23,9 @@
       <!-- <div class="card-container">
           <AppCard img-src="https://pbs.twimg.com/profile_images/794708906094317572/Bb8lpZ2t_400x400.jpg" title="TJ"/>
       </div> -->
+    <test1 @bla="updateTitle($event)" :title="title"/>
+    <test2 :title="title"/>
+
   </div>
 </template>
 
@@ -32,12 +35,16 @@
 import AppInput from './components/AppInput';
 import AppCard from './components/AppCard';
 import AppButton from './components/AppButton';
+import test1 from './components/test1';
+import test2 from './components/test2'
 
 export default {
   components: {
     AppInput,
     AppCard,
-    AppButton
+    AppButton,
+    test1,
+    test2
   },
   data () {
       return {
@@ -45,7 +52,8 @@ export default {
           newSrc: '',
           newTitle: '',
           cards: [],
-          todo: []
+          todo: [],
+          title: 'test title'
       }
   },
   methods: {
@@ -76,6 +84,9 @@ export default {
       },
       setTaskDone (i) {
           this.todo[i].done = true;
+      },
+      updateTitle (blabla) {
+          this.title = blabla;
       }
   }
 }

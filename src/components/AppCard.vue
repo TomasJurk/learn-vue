@@ -2,8 +2,8 @@
     <div class="card">
         <img :src="imgSrc" alt="">
         <h2>{{title}}</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, illo!</p>
-        <AppButton class="btn">Button test</AppButton>
+        <p>{{ textDescr }}</p>
+        <AppButton @click.native="changeText" class="btn">Button test</AppButton>
     </div>
 </template>
 
@@ -14,11 +14,24 @@ import AppButton from './AppButton';
 export default {
     name: 'AppCard',
     props: {
-        imgSrc: String,
+        imgSrc: {
+            type: String,
+            required: true    
+        },
         title: String
     },
     components: {
         AppButton
+    },
+    data () {
+        return {
+            textDescr: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, illo!'
+        }
+    },
+    methods: {
+        changeText () {
+            this.textDescr = 'DAGS!!!';
+        }
     }
 }
 </script>
