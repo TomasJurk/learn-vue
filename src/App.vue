@@ -20,9 +20,6 @@
           <AppCard :img-src="card.newSrc" :title="card.newTitle"/>
       </div>
 
-      <!-- <div class="card-container">
-          <AppCard img-src="https://pbs.twimg.com/profile_images/794708906094317572/Bb8lpZ2t_400x400.jpg" title="TJ"/>
-      </div> -->
     <test1 @bla="updateTitle($event)" :title="title"/>
     <test2 :title="title"/>
 
